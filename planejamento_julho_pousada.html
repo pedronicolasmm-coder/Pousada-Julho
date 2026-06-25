@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Planejamento Julho 2025 — Pousada das Missões</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --laranja: #E07B20;
+  --verde: #1A6B2F;
+  --marrom: #5C3A1E;
+  --amarelo: #F5A623;
+  --rosa: #C2185B;
+  --preto: #111111;
+  --branco: #FFFFFF;
+  --cinza-claro: #F4F1EC;
+  --cinza-medio: #E2DDD6;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Nunito', sans-serif; background: var(--cinza-claro); color: var(--preto); }
+.header { background: var(--preto); padding: 28px 32px 24px; position: relative; overflow: hidden; }
+.header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(90deg, var(--laranja), var(--amarelo), var(--verde)); }
+.header-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.header-logo { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--branco); letter-spacing: 2px; }
+.header-logo span { color: var(--laranja); }
+.header-badge { background: var(--laranja); color: var(--branco); font-size: 12px; font-weight: 800; padding: 6px 14px; border-radius: 20px; letter-spacing: 1px; text-transform: uppercase; }
+.header-title { font-family: 'Bebas Neue', sans-serif; font-size: 48px; color: var(--branco); letter-spacing: 3px; margin-top: 12px; line-height: 1; }
+.header-title span { color: var(--laranja); }
+.header-sub { font-size: 13px; color: rgba(255,255,255,0.55); margin-top: 6px; font-weight: 600; }
+.stats-bar { background: var(--laranja); padding: 14px 32px; }
+.stats-inner { max-width: 1100px; margin: 0 auto; display: flex; gap: 32px; flex-wrap: wrap; }
+.stat { display: flex; align-items: center; gap: 8px; color: var(--branco); font-size: 13px; font-weight: 700; }
+.stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 22px; }
+.tabs { background: var(--preto); border-top: 1px solid rgba(255,255,255,0.08); }
+.tabs-inner { max-width: 1100px; margin: 0 auto; display: flex; }
+.tab { padding: 14px 28px; font-size: 12px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; color: rgba(255,255,255,0.4); border-bottom: 3px solid transparent; transition: all 0.2s; }
+.tab.active { color: var(--laranja); border-bottom-color: var(--laranja); }
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+.main { max-width: 1100px; margin: 0 auto; padding: 32px 24px; }
+.bloco { margin-bottom: 40px; }
+.bloco-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding: 14px 20px; border-radius: 10px; }
+.bloco-header.b1 { background: var(--laranja); }
+.bloco-header.b2 { background: var(--verde); }
+.bloco-header.b3 { background: var(--marrom); }
+.bloco-header.b4 { background: #1565C0; }
+.bloco-header.b5 { background: var(--rosa); }
+.bloco-num { font-family: 'Bebas Neue', sans-serif; font-size: 36px; color: rgba(255,255,255,0.3); letter-spacing: 2px; line-height: 1; }
+.bloco-info { flex: 1; }
+.bloco-titulo { font-family: 'Bebas Neue', sans-serif; font-size: 18px; color: var(--branco); letter-spacing: 2px; }
+.bloco-sub { font-size: 11px; color: rgba(255,255,255,0.7); font-weight: 600; margin-top: 2px; }
+.bloco-count { background: rgba(255,255,255,0.2); color: var(--branco); font-size: 11px; font-weight: 800; padding: 4px 10px; border-radius: 20px; white-space: nowrap; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
+.card { background: var(--branco); border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.07); transition: transform 0.2s, box-shadow 0.2s; }
+.card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+.card-top { padding: 16px 18px 12px; border-bottom: 1px solid var(--cinza-medio); display: flex; align-items: flex-start; gap: 12px; }
+.card-num { font-family: 'Bebas Neue', sans-serif; font-size: 36px; color: var(--laranja); line-height: 1; min-width: 38px; }
+.card-num.verde { color: var(--verde); }
+.card-num.marrom { color: var(--marrom); }
+.card-num.azul { color: #1565C0; }
+.card-num.rosa { color: var(--rosa); }
+.card-info { flex: 1; }
+.card-titulo { font-size: 14px; font-weight: 800; color: var(--preto); line-height: 1.3; }
+.card-semana { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 10px; margin-top: 5px; text-transform: uppercase; letter-spacing: 0.5px; }
+.tag-pousada { background: #FEF3E0; color: #C06010; }
+.tag-destino { background: #E8F4EC; color: #1A6B2F; }
+.tag-inverno { background: #E3F2FD; color: #1565C0; }
+.tag-fe { background: #EDE7F6; color: #4527A0; }
+.tag-agencias { background: #FCE4EC; color: #AD1457; }
+.paginas { padding: 14px 18px 16px; }
+.paginas-label { font-size: 10px; font-weight: 800; color: var(--cinza-medio); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+.pagina { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px dashed var(--cinza-medio); }
+.pagina:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+.pag-badge { display: inline-block; font-size: 9px; font-weight: 800; padding: 2px 7px; border-radius: 4px; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.5px; }
+.pag-capa { background: var(--preto); color: var(--branco); }
+.pag-meio { background: var(--verde); color: var(--branco); }
+.pag-cta { background: var(--laranja); color: var(--branco); }
+.pag-titulo { font-size: 12px; font-weight: 800; color: var(--preto); margin-bottom: 2px; line-height: 1.3; }
+.pag-sub { font-size: 11px; font-weight: 600; color: #777; margin-bottom: 3px; line-height: 1.3; }
+.pag-texto { font-size: 10px; color: #555; line-height: 1.5; }
+
+/* VÍDEOS */
+.video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
+.video-card { background: var(--branco); border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.07); }
+.video-thumb { height: 90px; display: flex; align-items: center; justify-content: center; position: relative; }
+.vt1 { background: linear-gradient(135deg, #1A3A1A, #E07B20); }
+.vt2 { background: linear-gradient(135deg, #111, #1A6B2F); }
+.vt3 { background: linear-gradient(135deg, #3A1A00, #F5A623); }
+.vt4 { background: linear-gradient(135deg, #003A5C, #E07B20); }
+.vt5 { background: linear-gradient(135deg, #1A1A3A, #5C3A1E); }
+.vt6 { background: linear-gradient(135deg, #3A0010, #C2185B); }
+.vt7 { background: linear-gradient(135deg, #001A3A, #1565C0); }
+.vt8 { background: linear-gradient(135deg, #1A3A00, #1A6B2F); }
+.vt9 { background: linear-gradient(135deg, #3A1A00, #E07B20); }
+.vt10 { background: linear-gradient(135deg, #111, #5C3A1E); }
+.vt-num { font-family: 'Bebas Neue', sans-serif; font-size: 52px; color: rgba(255,255,255,0.15); position: absolute; left: 14px; }
+.vt-play { width: 36px; height: 36px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.5); display: flex; align-items: center; justify-content: center; color: white; font-size: 14px; }
+.vt-tag { position: absolute; bottom: 8px; right: 10px; font-size: 9px; font-weight: 800; padding: 2px 7px; border-radius: 8px; text-transform: uppercase; }
+.vtag-estrutura { background: var(--laranja); color: white; }
+.vtag-exp { background: var(--verde); color: white; }
+.vtag-fe { background: #4527A0; color: white; }
+.vtag-hist { background: #1565C0; color: white; }
+.video-body { padding: 14px 18px 16px; }
+.video-titulo { font-size: 13px; font-weight: 800; color: var(--preto); margin-bottom: 8px; line-height: 1.3; }
+.video-formato { display: inline-block; font-size: 9px; font-weight: 700; padding: 2px 8px; border-radius: 10px; background: #F4F1EC; color: #777; margin-bottom: 10px; text-transform: uppercase; }
+.cena { display: flex; gap: 8px; margin-bottom: 8px; align-items: flex-start; }
+.cena:last-of-type { margin-bottom: 0; }
+.cena-n { min-width: 18px; height: 18px; border-radius: 50%; background: var(--laranja); color: white; font-size: 8px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+.cena-n.v { background: var(--verde); }
+.cena-n.m { background: var(--marrom); }
+.cena-txt { font-size: 10px; color: #555; line-height: 1.5; }
+.cena-txt strong { color: var(--preto); font-weight: 800; }
+.leg-box { margin-top: 10px; background: #F4F1EC; border-left: 3px solid var(--laranja); border-radius: 0 6px 6px 0; padding: 8px 12px; }
+.leg-label { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--laranja); margin-bottom: 3px; }
+.leg-txt { font-size: 10px; color: #555; font-style: italic; line-height: 1.5; }
+
+.footer { background: var(--preto); padding: 24px 32px; text-align: center; margin-top: 20px; }
+.footer-txt { font-size: 12px; color: rgba(255,255,255,0.4); font-weight: 600; }
+.footer-txt span { color: var(--laranja); }
+@media(max-width:768px){ .grid,.video-grid{grid-template-columns:1fr;} .main,.header,.stats-bar,.footer{padding-left:20px;padding-right:20px;} }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-inner">
+    <div>
+      <div class="header-logo">Pousada das <span>Missões</span></div>
+      <div class="header-title">PLANEJAMENTO <span>JULHO</span> 2025</div>
+      <div class="header-sub">@pousadadasmissoes · São Miguel das Missões, RS</div>
+    </div>
+    <div class="header-badge">18 Carrosséis + 10 Vídeos</div>
+  </div>
+</div>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat"><span class="stat-num">18</span> carrosséis</div>
+    <div class="stat"><span class="stat-num">10</span> ideias de vídeo</div>
+    <div class="stat"><span class="stat-num">4-5</span> páginas por carrossel</div>
+    <div class="stat"><span class="stat-num">4</span> semanas de conteúdo</div>
+  </div>
+</div>
+
+<div class="tabs">
+  <div class="tabs-inner">
+    <div class="tab active" onclick="showTab('carrosseis')">📋 18 Carrosséis</div>
+    <div class="tab" onclick="showTab('videos')">🎬 10 Vídeos</div>
+  </div>
+</div>
+
+<!-- ABA CARROSSÉIS -->
+<div id="carrosseis" class="tab-content active">
+<div class="main">
+
+<!-- BLOCO 1: POUSADA -->
+<div class="bloco">
+  <div class="bloco-header b1">
+    <div class="bloco-num">01</div>
+    <div class="bloco-info">
+      <div class="bloco-titulo">A POUSADA — ESTRUTURA E EXPERIÊNCIA</div>
+      <div class="bloco-sub">13 carrosséis mostrando tudo que a pousada oferece</div>
+    </div>
+    <div class="bloco-count">Posts 01 ao 13</div>
+  </div>
+  <div class="grid">
+
+    <!-- 01 -->
+    <div class="card">
+      <div class="card-top"><div class="card-num">01</div><div class="card-info"><div class="card-titulo">Ao lado do Patrimônio Mundial</div><span class="card-semana tag-pousada">A pousada</span></div></div>
+      <div class="paginas"><div class="paginas-label">Páginas</div>
+        <div class="pagina"><span class="pag-badge pag-capa">Capa</span><div class="pag-titulo">Ao lado do Patrimônio Mundial.</div><div class="pag-sub">A localização que faz diferença.</div><div class="pag-texto">A portaria do Patrimônio fica a passos daqui. Você vai e volta a pé, sem depender de nada.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 2</span><div class="pag-titulo">Pôr do sol e volta a pé.</div><div class="pag-sub">Sem carro, sem táxi.</div><div class="pag-texto">Você visita o Patrimônio, fica pro pôr do sol e volta tranquilo. Ninguém te apressando.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 3</span><div class="pag-titulo">Espetáculo à noite, pousada ao lado.</div><div class="pag-sub">Termina o show e já tá em casa.</div><div class="pag-texto">Sem precisar pegar carro depois do espetáculo. É essa a diferença de estar no lugar certo.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 4</span><div class="pag-titulo">De manhã, o Patrimônio te espera vazio.</div><div class="pag-sub">Antes de todo mundo chegar.</div><div class="pag-texto">Quem dorme aqui acorda, toma café e já entra no sítio com o sol baixo e quase ninguém por perto.</div></div>
+        <div class="pagina"><span class="pag-badge pag-cta">CTA</span><div class="pag-titulo">Localização única.</div><div class="pag-sub">Reserve pelo WhatsApp.</div><div class="pag-texto">Me chama no WhatsApp ou no direct.</div></div>
+      </div>
+    </div>
+
+    <!-- 02 -->
+    <div class="card">
+      <div class="card-top"><div class="card-num">02</div><div class="card-info"><div class="card-titulo">Os quartos — conforto e identidade missioneira</div><span class="card-semana tag-pousada">A pousada</span></div></div>
+      <div class="paginas"><div class="paginas-label">Páginas</div>
+        <div class="pagina"><span class="pag-badge pag-capa">Capa</span><div class="pag-titulo">Seu quarto te espera.</div><div class="pag-sub">Identidade missioneira em cada detalhe.</div><div class="pag-texto">Paredes com tons quentes, madeira e arte regional. Você dorme no clima das Missões.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 2</span><div class="pag-titulo">Quarto arrumado com cuidado.</div><div class="pag-sub">Você chega e está tudo pronto.</div><div class="pag-texto">Não é hotel. É pousada. A diferença aparece desde o primeiro minuto.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 3</span><div class="pag-titulo">Suíte para datas especiais.</div><div class="pag-sub">A gente prepara tudo a pedido.</div><div class="pag-texto">Aniversário, pedido de namoro, Dia dos Namorados. Decoração e champanhe é só pedir.</div></div>
+        <div class="pagina"><span class="pag-badge pag-cta">CTA</span><div class="pag-titulo">Quer ver disponibilidade?</div><div class="pag-sub">Me chama no WhatsApp.</div><div class="pag-texto">Me chama no WhatsApp ou no direct.</div></div>
+      </div>
+    </div>
+
+    <!-- 03 -->
+    <div class="card">
+      <div class="card-top"><div class="card-num">03</div><div class="card-info"><div class="card-titulo">Café da manhã com receitas da região</div><span class="card-semana tag-pousada">A pousada</span></div></div>
+      <div class="paginas"><div class="paginas-label">Páginas</div>
+        <div class="pagina"><span class="pag-badge pag-capa">Capa</span><div class="pag-titulo">Pão do índio, favo de mel e bolo de butiá.</div><div class="pag-sub">Não é buffet de hotel.</div><div class="pag-texto">Receitas da região que você não acha em qualquer lugar. A mesa está pronta antes de você descer.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 2</span><div class="pag-titulo">No inverno de julho, o café tem outro sabor.</div><div class="pag-sub">Canecão quente, frio lá fora.</div><div class="pag-texto">Acordar com frio e descer pra um café quente. Esse momento vale a viagem.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 3</span><div class="pag-titulo">Sai descansado e bem alimentado.</div><div class="pag-sub">Pronto pra um dia inteiro no Patrimônio.</div><div class="pag-texto">Visitar o Patrimônio Mundial pede disposição. Nosso café garante que você sai pronto.</div></div>
+        <div class="pagina"><span class="pag-badge pag-cta">CTA</span><div class="pag-titulo">Já incluso na diária.</div><div class="pag-sub">Sem surpresa no check-out.</div><div class="pag-texto">Me chama no WhatsApp ou no direct.</div></div>
+      </div>
+    </div>
+
+    <!-- 04 -->
+    <div class="card">
+      <div class="card-top"><div class="card-num">04</div><div class="card-info"><div class="card-titulo">Por dentro da pousada — ambiente e estrutura</div><span class="card-semana tag-pousada">A pousada</span></div></div>
+      <div class="paginas"><div class="paginas-label">Páginas</div>
+        <div class="pagina"><span class="pag-badge pag-capa">Capa</span><div class="pag-titulo">Por dentro da pousada.</div><div class="pag-sub">Do lado do Patrimônio Mundial.</div><div class="pag-texto">Como é chegar, se instalar e viver a experiência aqui. Uma pousada temática do chão ao teto.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 2</span><div class="pag-titulo">Decoração que já conta a história.</div><div class="pag-sub">Tijolo aparente, madeira e arte missioneira.</div><div class="pag-texto">Você entra na pousada e já está no clima. A identidade jesuítico-guarani aparece em cada detalhe.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 3</span><div class="pag-titulo">Corredor, jardim e espaços comuns.</div><div class="pag-sub">Estrutura que convida a descansar.</div><div class="pag-texto">Área verde, corredor coberto e espaço pra relaxar entre os passeios. Sem correria.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 4</span><div class="pag-titulo">A experiência começa aqui, não nas pedras.</div><div class="pag-sub">Imersão desde a chegada.</div><div class="pag-texto">Antes de caminhar pelo Patrimônio, você já está dentro da história da região.</div></div>
+        <div class="pagina"><span class="pag-badge pag-cta">CTA</span><div class="pag-titulo">Quer conhecer a estrutura?</div><div class="pag-sub">Me chama no WhatsApp.</div><div class="pag-texto">Me chama no WhatsApp ou no direct.</div></div>
+      </div>
+    </div>
+
+    <!-- 05 -->
+    <div class="card">
+      <div class="card-top"><div class="card-num">05</div><div class="card-info"><div class="card-titulo">Churrasqueira e cozinha — você se sente em casa</div><span class="card-semana tag-pousada">A pousada</span></div></div>
+      <div class="paginas"><div class="paginas-label">Páginas</div>
+        <div class="pagina"><span class="pag-badge pag-capa">Capa</span><div class="pag-titulo">Aqui você se sente em casa.</div><div class="pag-sub">Churrasqueira, cozinha e aconchego.</div><div class="pag-texto">Não é corredor de hotel. É um lugar onde você chega e quer ficar.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 2</span><div class="pag-titulo">Churrasqueira pra usar à vontade.</div><div class="pag-sub">Depois do Patrimônio, acende o fogo.</div><div class="pag-texto">A estrutura tá aqui. É só aproveitar com o grupo.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 3</span><div class="pag-titulo">Cozinha compartilhada disponível.</div><div class="pag-sub">Liberdade pra quem precisa.</div><div class="pag-texto">Quer fazer um chá no frio de julho? A cozinha está à disposição dos hóspedes.</div></div>
+        <div class="pagina"><span class="pag-badge pag-cta">CTA</span><div class="pag-titulo">Mais que uma pousada.</div><div class="pag-sub">Reserve pelo WhatsApp.</div><div class="pag-texto">Me chama no WhatsApp ou no direct.</div></div>
+      </div>
+    </div>
+
+    <!-- 06 -->
+    <div class="card">
+      <div class="card-top"><div class="card-num">06</div><div class="card-info"><div class="card-titulo">O que fazer em 2 dias nas Missões</div><span class="card-semana tag-pousada">A pousada</span></div></div>
+      <div class="paginas"><div class="paginas-label">Páginas</div>
+        <div class="pagina"><span class="pag-badge pag-capa">Capa</span><div class="pag-titulo">1 dia não é suficiente.</div><div class="pag-sub">Mas 2 dias são perfeitos.</div><div class="pag-texto">Quem vem de passagem vê o Patrimônio por fora. Quem fica dois dias vive a experiência completa.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 2</span><div class="pag-titulo">Dia 1: Patrimônio, pôr do sol e Espetáculo.</div><div class="pag-sub">Tudo no mesmo dia.</div><div class="pag-texto">Chega na pousada, vai direto ao sítio arqueológico. Fica pro pôr do sol. À noite, o Espetáculo de Som e Luz.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 3</span><div class="pag-titulo">Dia 2: Museu, Fonte e Borrario.</div><div class="pag-sub">O que quase ninguém visita.</div><div class="pag-texto">Museu Missioneiro, Fonte Missioneira e Borrario Minhas Origens. Os lugares que quem foi sempre lamenta não ter ido antes.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 4</span><div class="pag-titulo">Café da manhã entre os dois dias.</div><div class="pag-sub">Pão do índio, favo de mel e bolo de butiá.</div><div class="pag-texto">Você acorda, desce pro café e ainda tem um dia inteiro pela frente.</div></div>
+        <div class="pagina"><span class="pag-badge pag-cta">CTA</span><div class="pag-titulo">Vale ficar dois dias.</div><div class="pag-sub">Me chama e garante a data.</div><div class="pag-texto">Me chama no WhatsApp ou no direct.</div></div>
+      </div>
+    </div>
+
+    <!-- 07 -->
+    <div class="card">
+      <div class="card-top"><div class="card-num">07</div><div class="card-info"><div class="card-titulo">Por que julho é um dos melhores meses pra visitar as Missões</div><span class="card-semana tag-pousada">A pousada</span></div></div>
+      <div class="paginas"><div class="paginas-label">Páginas</div>
+        <div class="pagina"><span class="pag-badge pag-capa">Capa</span><div class="pag-titulo">Julho nas Missões é diferente.</div><div class="pag-sub">E melhor do que você imagina.</div><div class="pag-texto">Muita gente evita vir no inverno. Quem veio sabe que errou em esperar.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 2</span><div class="pag-titulo">Menos turista, mais experiência.</div><div class="pag-sub">O Patrimônio quase só pra você.</div><div class="pag-texto">Em julho o movimento cai. Você visita tudo com calma, tira foto sem ninguém na frente.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 3</span><div class="pag-titulo">Névoa sobre o Patrimônio de manhã.</div><div class="pag-sub">Cena que só existe no inverno.</div><div class="pag-texto">A luz fria de julho nas pedras históricas cria uma atmosfera que o verão não tem.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 4</span><div class="pag-titulo">Café quente, frio lá fora, lareira acesa.</div><div class="pag-sub">Aconchego que faz parte da viagem.</div><div class="pag-texto">O inverno aqui tem um charme que a cidade não consegue oferecer.</div></div>
+        <div class="pagina"><span class="pag-badge pag-cta">CTA</span><div class="pag-titulo">Julio está chegando.</div><div class="pag-sub">Garante sua data agora.</div><div class="pag-texto">Me chama no WhatsApp ou no direct.</div></div>
+      </div>
+    </div>
+
+    <!-- 08 -->
+    <div class="card">
+      <div class="card-top"><div class="card-num">08</div><div class="card-info"><div class="card-titulo">Pousada temática jesuítico-guarani — a experiência começa aqui</div><span class="card-semana tag-pousada">A pousada</span></div></div>
+      <div class="paginas"><div class="paginas-label">Páginas</div>
+        <div class="pagina"><span class="pag-badge pag-capa">Capa</span><div class="pag-titulo">A experiência começa aqui.</div><div class="pag-sub">Não só no Patrimônio.</div><div class="pag-texto">A Pousada das Missões é temática jesuítico-guarani. Você está na história antes mesmo de sair.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 2</span><div class="pag-titulo">Decoração com identidade regional.</div><div class="pag-sub">Arte, madeira e tijolo aparente.</div><div class="pag-texto">Cada elemento remete à cultura missioneira. Não é apenas decoração, é imersão.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 3</span><div class="pag-titulo">Ambiente que conta a história.</div><div class="pag-sub">Do corredor ao quarto.</div><div class="pag-texto">Quem se hospeda aqui entende as Missões de um jeito diferente. O ambiente prepara você pra visita.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 4</span><div class="pag-titulo">Única pousada temática ao lado do Patrimônio.</div><div class="pag-sub">Localização e identidade juntas.</div><div class="pag-texto">Não existe outro lugar igual na região. Aqui o destino e a hospedagem fazem parte da mesma experiência.</div></div>
+        <div class="pagina"><span class="pag-badge pag-cta">CTA</span><div class="pag-titulo">Vem viver essa experiência.</div><div class="pag-sub">Reserve pelo WhatsApp.</div><div class="pag-texto">Me chama no WhatsApp ou no direct.</div></div>
+      </div>
+    </div>
+
+    <!-- 09 -->
+    <div class="card">
+      <div class="card-top"><div class="card-num">09</div><div class="card-info"><div class="card-titulo">Passar de dia vs se hospedar</div><span class="card-semana tag-pousada">A pousada</span></div></div>
+      <div class="paginas"><div class="paginas-label">Páginas</div>
+        <div class="pagina"><span class="pag-badge pag-capa">Capa</span><div class="pag-titulo">Vem de passagem ou fica?</div><div class="pag-sub">A diferença é maior do que parece.</div><div class="pag-texto">Quem passa de dia vê a superfície. Quem fica vive as Missões de verdade.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 2</span><div class="pag-titulo">O pôr do sol no Patrimônio.</div><div class="pag-sub">Só quem fica vê.</div><div class="pag-texto">A luz do final da tarde nas pedras cria uma atmosfera que nenhuma foto captura.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 3</span><div class="pag-titulo">O Espetáculo de Som e Luz.</div><div class="pag-sub">Só acontece à noite.</div><div class="pag-texto">Quem passa de carro e volta no mesmo dia nunca chega a ver isso.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 4</span><div class="pag-titulo">Manhã seguinte sem pressa.</div><div class="pag-sub">Patrimônio vazio, só pra você.</div><div class="pag-texto">Com uma noite aqui, você acorda e ainda tem um dia inteiro pela frente.</div></div>
+        <div class="pagina"><span class="pag-badge pag-cta">CTA</span><div class="pag-titulo">Vale a pena ficar.</div><div class="pag-sub">Reserve pelo WhatsApp.</div><div class="pag-texto">Me chama no WhatsApp ou no direct.</div></div>
+      </div>
+    </div>
+
+    <!-- 10 -->
+    <div class="card">
+      <div class="card-top"><div class="card-num">10</div><div class="card-info"><div class="card-titulo">Estrutura para grupos e comitivas</div><span class="card-semana tag-pousada">A pousada</span></div></div>
+      <div class="paginas"><div class="paginas-label">Páginas</div>
+        <div class="pagina"><span class="pag-badge pag-capa">Capa</span><div class="pag-titulo">Vem com o grupo todo.</div><div class="pag-sub">A gente recebe todo mundo.</div><div class="pag-texto">Família grande, grupo de amigos, comitiva organizada. A pousada tem capacidade e estrutura.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 2</span><div class="pag-titulo">Reserva de múltiplos quartos simplificada.</div><div class="pag-sub">Um contato, tudo organizado.</div><div class="pag-texto">Você fala com a gente uma vez e a gente cuida de tudo pra cada membro do grupo.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 3</span><div class="pag-titulo">Café da manhã pra todo mundo junto.</div><div class="pag-sub">Sem fila, sem pressa.</div><div class="pag-texto">A gente organiza o café pra receber o grupo com tranquilidade.</div></div>
+        <div class="pagina"><span class="pag-badge pag-cta">CTA</span><div class="pag-titulo">Me conta o tamanho do grupo.</div><div class="pag-sub">Verifico disponibilidade rápido.</div><div class="pag-texto">Me chama no WhatsApp ou no direct.</div></div>
+      </div>
+    </div>
+
+    <!-- 11 -->
+    <div class="card">
+      <div class="card-top"><div class="card-num">11</div><div class="card-info"><div class="card-titulo">Perguntas frequentes antes de reservar</div><span class="card-semana tag-pousada">A pousada</span></div></div>
+      <div class="paginas"><div class="paginas-label">Páginas</div>
+        <div class="pagina"><span class="pag-badge pag-capa">Capa</span><div class="pag-titulo">Antes de reservar, você tem essas dúvidas.</div><div class="pag-sub">Respondo as mais comuns aqui.</div><div class="pag-texto">Quase todo mundo que planeja vir tem as mesmas perguntas.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 2</span><div class="pag-titulo">Precisa de carro?</div><div class="pag-sub">Carro é o mais prático.</div><div class="pag-texto">De carro você tem mais liberdade. Tem ônibus de Santo Ângelo. Na cidade, a pousada fica a pé do Patrimônio.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 3</span><div class="pag-titulo">Tem o que fazer além do Patrimônio?</div><div class="pag-sub">Muito mais do que você imagina.</div><div class="pag-texto">Museu, benzimento, Fonte Missioneira, Espetáculo. Dá pra ficar 3 dias sem repetir nada.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 4</span><div class="pag-titulo">Vale ficar mais de 1 dia?</div><div class="pag-sub">Sempre.</div><div class="pag-texto">Com 1 dia você vê o Patrimônio. Com 2 dias você vive as Missões de verdade.</div></div>
+        <div class="pagina"><span class="pag-badge pag-cta">CTA</span><div class="pag-titulo">Ficou com dúvida?</div><div class="pag-sub">Me chama no direct.</div><div class="pag-texto">Pode perguntar qualquer coisa. Sem compromisso.</div></div>
+      </div>
+    </div>
+
+    <!-- 12 -->
+    <div class="card">
+      <div class="card-top"><div class="card-num">12</div><div class="card-info"><div class="card-titulo">Depoimentos de hóspedes</div><span class="card-semana tag-pousada">A pousada</span></div></div>
+      <div class="paginas"><div class="paginas-label">Páginas</div>
+        <div class="pagina"><span class="pag-badge pag-capa">Capa</span><div class="pag-titulo">Não é o que a gente diz.</div><div class="pag-sub">É o que quem veio sentiu.</div><div class="pag-texto">Depoimento de hóspede vale mais que qualquer texto de marketing.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 2</span><div class="pag-titulo">[Depoimento real 1]</div><div class="pag-sub">Nome e cidade.</div><div class="pag-texto">Inserir frase real de hóspede. Quanto mais específica e emocional, melhor.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 3</span><div class="pag-titulo">[Depoimento real 2]</div><div class="pag-sub">Nome e cidade.</div><div class="pag-texto">Inserir depoimento sobre o Patrimônio, o espetáculo ou o benzimento.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 4</span><div class="pag-titulo">[Depoimento real 3]</div><div class="pag-sub">Nome e cidade.</div><div class="pag-texto">Inserir depoimento sobre o café da manhã ou o atendimento.</div></div>
+        <div class="pagina"><span class="pag-badge pag-cta">CTA</span><div class="pag-titulo">A próxima história pode ser a sua.</div><div class="pag-sub">Reserve pelo WhatsApp.</div><div class="pag-texto">Me chama no WhatsApp ou no direct.</div></div>
+      </div>
+    </div>
+
+    <!-- 13 -->
+    <div class="card">
+      <div class="card-top"><div class="card-num">13</div><div class="card-info"><div class="card-titulo">Missões no inverno — o frio é parte da experiência</div><span class="card-semana tag-pousada">A pousada</span></div></div>
+      <div class="paginas"><div class="paginas-label">Páginas</div>
+        <div class="pagina"><span class="pag-badge pag-capa">Capa</span><div class="pag-titulo">Julho nas Missões tem outro clima.</div><div class="pag-sub">Literalmente.</div><div class="pag-texto">O frio de julho não é motivo pra não vir. É o motivo pra vir.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 2</span><div class="pag-titulo">Névoa sobre o Patrimônio de manhã.</div><div class="pag-sub">Cena que só tem no inverno.</div><div class="pag-texto">Julho tem manhãs com névoa baixa e uma luz que não aparece em nenhuma outra época.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 3</span><div class="pag-titulo">Menos gente, mais experiência.</div><div class="pag-sub">Inverno é temporada mais tranquila.</div><div class="pag-texto">No inverno você visita tudo com mais calma. A experiência fica mais autêntica.</div></div>
+        <div class="pagina"><span class="pag-badge pag-cta">CTA</span><div class="pag-titulo">Condição especial de inverno.</div><div class="pag-sub">Me chama no WhatsApp.</div><div class="pag-texto">Me chama no WhatsApp ou no direct.</div></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- BLOCO 2: DESTINO -->
+<div class="bloco">
+  <div class="bloco-header b2">
+    <div class="bloco-num">02</div>
+    <div class="bloco-info">
+      <div class="bloco-titulo">DESTINO E EXPERIÊNCIAS</div>
+      <div class="bloco-sub">Patrimônio Mundial, história e espiritualidade</div>
+    </div>
+    <div class="bloco-count">Posts 14 ao 16</div>
+  </div>
+  <div class="grid">
+
+    <!-- 14 -->
+    <div class="card">
+      <div class="card-top"><div class="card-num verde">14</div><div class="card-info"><div class="card-titulo">O que é o Espetáculo de Som e Luz</div><span class="card-semana tag-destino">Destino</span></div></div>
+      <div class="paginas"><div class="paginas-label">Páginas</div>
+        <div class="pagina"><span class="pag-badge pag-capa">Capa</span><div class="pag-titulo">Às 20h o Patrimônio ganha vida.</div><div class="pag-sub">Projeção sobre pedras de 300 anos.</div><div class="pag-texto">Toda noite o sítio arqueológico recebe um espetáculo que conta a história das Missões.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 2</span><div class="pag-titulo">A história projetada na própria parede.</div><div class="pag-sub">Missões Jesuíticas em imagens e narrativa.</div><div class="pag-texto">Você senta na frente do Patrimônio e assiste a história dos Sete Povos ser contada ali na pedra.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 3</span><div class="pag-titulo">Quem vem só de dia perde.</div><div class="pag-sub">O espetáculo é só à noite.</div><div class="pag-texto">Turistas que passam de carro e voltam no mesmo dia nunca chegam a ver isso.</div></div>
+        <div class="pagina"><span class="pag-badge pag-cta">CTA</span><div class="pag-titulo">Hospeda aqui e vê os dois.</div><div class="pag-sub">Pôr do sol de tarde, espetáculo à noite.</div><div class="pag-texto">Me chama no WhatsApp ou no direct.</div></div>
+      </div>
+    </div>
+
+    <!-- 15 -->
+    <div class="card">
+      <div class="card-top"><div class="card-num verde">15</div><div class="card-info"><div class="card-titulo">A Fonte Missioneira — 300 anos e ainda brota</div><span class="card-semana tag-destino">Destino</span></div></div>
+      <div class="paginas"><div class="paginas-label">Páginas</div>
+        <div class="pagina"><span class="pag-badge pag-capa">Capa</span><div class="pag-titulo">Essa fonte tem 300 anos e ainda funciona.</div><div class="pag-sub">Original dos Sete Povos das Missões.</div><div class="pag-texto">A água que brotava no tempo dos jesuítas ainda brota no mesmo lugar.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 2</span><div class="pag-titulo">Os Sete Povos tinham infraestrutura.</div><div class="pag-sub">Sistema de água no século 18.</div><div class="pag-texto">Enquanto boa parte do mundo lutava com higiene básica, os Sete Povos já tinham água organizada.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 3</span><div class="pag-titulo">Virou ponto de romaria.</div><div class="pag-sub">Tradição de fé que atravessou séculos.</div><div class="pag-texto">Muita gente vem de longe buscar essa água. Uma tradição que nunca parou.</div></div>
+        <div class="pagina"><span class="pag-badge pag-cta">CTA</span><div class="pag-titulo">Inclui no teu passeio.</div><div class="pag-sub">Quase ninguém vai. Vale muito.</div><div class="pag-texto">Me chama no WhatsApp ou no direct.</div></div>
+      </div>
+    </div>
+
+    <!-- 16 -->
+    <div class="card">
+      <div class="card-top"><div class="card-num verde">16</div><div class="card-info"><div class="card-titulo">Museu Missioneiro — o acervo que a maioria não visita</div><span class="card-semana tag-destino">Destino</span></div></div>
+      <div class="paginas"><div class="paginas-label">Páginas</div>
+        <div class="pagina"><span class="pag-badge pag-capa">Capa</span><div class="pag-titulo">Não é museu de vitrine entediante.</div><div class="pag-sub">É acervo barroco dos Sete Povos.</div><div class="pag-texto">As peças que estão aqui sobreviveram à destruição das Missões. Cada uma tem história pesada.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 2</span><div class="pag-titulo">Arte barroca feita por mãos indígenas.</div><div class="pag-sub">Técnica europeia, alma guarani.</div><div class="pag-texto">Os jesuítas ensinaram escultura e os guaranis transformaram em algo único no mundo.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 3</span><div class="pag-titulo">Peças resgatadas de sete povos diferentes.</div><div class="pag-sub">Uma civilização inteira num só lugar.</div><div class="pag-texto">O que foi espalhado por toda a região das Missões está reunido aqui.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 4</span><div class="pag-titulo">Reserva uma manhã pra isso.</div><div class="pag-sub">Não passa rápido. Vale cada minuto.</div><div class="pag-texto">A maioria dos visitantes passa correndo. Quem fica dois dias tem tempo de verdade.</div></div>
+        <div class="pagina"><span class="pag-badge pag-cta">CTA</span><div class="pag-titulo">Inclui no passeio.</div><div class="pag-sub">Fica pertinho do Patrimônio.</div><div class="pag-texto">Me chama no WhatsApp ou no direct.</div></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- BLOCO 3: MEIO DE SEMANA + AGÊNCIAS -->
+<div class="bloco">
+  <div class="bloco-header b3">
+    <div class="bloco-num">03</div>
+    <div class="bloco-info">
+      <div class="bloco-titulo">MEIO DE SEMANA E AGÊNCIAS</div>
+      <div class="bloco-sub">Ocupação segunda a quinta e B2B</div>
+    </div>
+    <div class="bloco-count">Posts 17 e 18</div>
+  </div>
+  <div class="grid">
+
+    <!-- 17 -->
+    <div class="card">
+      <div class="card-top"><div class="card-num marrom">17</div><div class="card-info"><div class="card-titulo">3 motivos pra vir de segunda a quinta em julho</div><span class="card-semana tag-pousada">Meio de semana</span></div></div>
+      <div class="paginas"><div class="paginas-label">Páginas</div>
+        <div class="pagina"><span class="pag-badge pag-capa">Capa</span><div class="pag-titulo">Fim de semana cheio e caro.</div><div class="pag-sub">Tem uma opção melhor.</div><div class="pag-texto">Vir de segunda a quinta muda completamente a experiência nas Missões.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 2</span><div class="pag-titulo">Patrimônio quase só pra você.</div><div class="pag-sub">Sem fila, sem pressa.</div><div class="pag-texto">No meio da semana você caminha no seu ritmo, sem turma atrapalhando a foto.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 3</span><div class="pag-titulo">Diária mais em conta.</div><div class="pag-sub">Mesma pousada, mesma estrutura.</div><div class="pag-texto">Condição especial pra quem tem flexibilidade de agenda.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 4</span><div class="pag-titulo">Dona Alzira com tempo pra cada um.</div><div class="pag-sub">No fim de semana ela fica sobrecarregada.</div><div class="pag-texto">No meio da semana você tem uma experiência muito mais íntima com ela.</div></div>
+        <div class="pagina"><span class="pag-badge pag-cta">CTA</span><div class="pag-titulo">Consulta a data e vem.</div><div class="pag-sub">A gente confirma rápido.</div><div class="pag-texto">Me chama no WhatsApp ou no direct.</div></div>
+      </div>
+    </div>
+
+    <!-- 18 -->
+    <div class="card">
+      <div class="card-top"><div class="card-num rosa">18</div><div class="card-info"><div class="card-titulo">Para agências — por que incluir as Missões nos roteiros</div><span class="card-semana tag-agencias">Agências / B2B</span></div></div>
+      <div class="paginas"><div class="paginas-label">Páginas</div>
+        <div class="pagina"><span class="pag-badge pag-capa">Capa</span><div class="pag-titulo">Ainda fora dos seus pacotes?</div><div class="pag-sub">O destino mais subestimado do sul.</div><div class="pag-texto">São Miguel das Missões é o único Patrimônio Mundial do sul do Brasil. E está fora da maioria dos catálogos.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 2</span><div class="pag-titulo">Argumento UNESCO que se vende sozinho.</div><div class="pag-sub">Patrimônio Mundial desde 1983.</div><div class="pag-texto">Não tem outro igual no sul do Brasil. Seu cliente não vai questionar.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 3</span><div class="pag-titulo">Confirmação rápida, comissão garantida.</div><div class="pag-sub">RS, SC, PR e SP.</div><div class="pag-texto">Parceria direta, sem burocracia. A gente atende rápido.</div></div>
+        <div class="pagina"><span class="pag-badge pag-meio">Página 4</span><div class="pag-titulo">Capacidade para grupos.</div><div class="pag-sub">27 apartamentos, estrutura completa.</div><div class="pag-texto">Estrutura pra receber comitivas com conforto e organização.</div></div>
+        <div class="pagina"><span class="pag-badge pag-cta">CTA</span><div class="pag-titulo">Fala com a gente sobre parceria.</div><div class="pag-sub">Atendimento direto.</div><div class="pag-texto">Me chama no WhatsApp.</div></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+</div>
+
+<!-- ABA VÍDEOS -->
+<div id="videos" class="tab-content">
+<div class="main">
+
+<div class="bloco">
+  <div class="bloco-header b4">
+    <div class="bloco-num">01</div>
+    <div class="bloco-info">
+      <div class="bloco-titulo">10 IDEIAS DE VÍDEO — JULHO 2025</div>
+      <div class="bloco-sub">Reels, Stories e YouTube — com legenda pronta</div>
+    </div>
+    <div class="bloco-count">10 vídeos</div>
+  </div>
+  <div class="video-grid">
+
+    <!-- V1 -->
+    <div class="video-card">
+      <div class="video-thumb vt1"><div class="vt-num">01</div><div class="vt-play">▶</div><span class="vt-tag vtag-estrutura">Estrutura</span></div>
+      <div class="video-body">
+        <div class="video-titulo">Tour pela pousada — de porta em porta</div>
+        <div class="video-formato">Reel · 30 a 45s</div>
+        <div class="cena"><div class="cena-n">1</div><div class="cena-txt"><strong>Fachada da pousada.</strong> Câmera da rua mostrando a entrada e o estacionamento.</div></div>
+        <div class="cena"><div class="cena-n">2</div><div class="cena-txt"><strong>Corredor coberto de tijolo.</strong> Câmera caminhando devagar, jardim dos dois lados.</div></div>
+        <div class="cena"><div class="cena-n v">3</div><div class="cena-txt"><strong>Porta do quarto abrindo.</strong> Cama arrumada, decoração missioneira visível.</div></div>
+        <div class="cena"><div class="cena-n v">4</div><div class="cena-txt"><strong>Área de convivência.</strong> Churrasqueira, cozinha compartilhada, espaço externo.</div></div>
+        <div class="cena"><div class="cena-n m">5</div><div class="cena-txt"><strong>Saída pela porta principal.</strong> Patrimônio visível ao fundo. Fecha mostrando a localização.</div></div>
+        <div class="leg-box"><div class="leg-label">Legenda</div><div class="leg-txt">"Ao lado do Patrimônio Mundial. Essa é a Pousada das Missões."</div></div>
+      </div>
+    </div>
+
+    <!-- V2 -->
+    <div class="video-card">
+      <div class="video-thumb vt2"><div class="vt-num">02</div><div class="vt-play">▶</div><span class="vt-tag vtag-estrutura">Estrutura</span></div>
+      <div class="video-body">
+        <div class="video-titulo">Tour completo da pousada no inverno</div>
+        <div class="video-formato">Reel + YouTube · 60s</div>
+        <div class="cena"><div class="cena-n">1</div><div class="cena-txt"><strong>Fachada com céu frio de julho.</strong> Palmeiras e jardim.</div></div>
+        <div class="cena"><div class="cena-n">2</div><div class="cena-txt"><strong>Corredor coberto de tijolo.</strong> Câmera andando devagar.</div></div>
+        <div class="cena"><div class="cena-n v">3</div><div class="cena-txt"><strong>Quarto por dentro.</strong> Cama arrumada, arte nas paredes.</div></div>
+        <div class="cena"><div class="cena-n v">4</div><div class="cena-txt"><strong>Piscina com céu azul de inverno.</strong></div></div>
+        <div class="cena"><div class="cena-n m">5</div><div class="cena-txt"><strong>Churrasqueira acesa.</strong> Clima de fim de tarde.</div></div>
+        <div class="leg-box"><div class="leg-label">Legenda</div><div class="leg-txt">"Ao lado do Patrimônio Mundial. Essa é a Pousada das Missões."</div></div>
+      </div>
+    </div>
+
+    <!-- V3 -->
+    <div class="video-card">
+      <div class="video-thumb vt3"><div class="vt-num">03</div><div class="vt-play">▶</div><span class="vt-tag vtag-exp">Experiência</span></div>
+      <div class="video-body">
+        <div class="video-titulo">O café da manhã — receitas que você não espera</div>
+        <div class="video-formato">Reel · 20 a 30s</div>
+        <div class="cena"><div class="cena-n">1</div><div class="cena-txt"><strong>Mesa sendo preparada.</strong> Câmera de cima pra baixo.</div></div>
+        <div class="cena"><div class="cena-n">2</div><div class="cena-txt"><strong>Close no pão do índio.</strong> Sendo partido ou servido.</div></div>
+        <div class="cena"><div class="cena-n v">3</div><div class="cena-txt"><strong>Favo de mel escorrendo.</strong> Close bem próximo.</div></div>
+        <div class="cena"><div class="cena-n v">4</div><div class="cena-txt"><strong>Bolo de butiá cortado.</strong> Mostrando a textura.</div></div>
+        <div class="cena"><div class="cena-n m">5</div><div class="cena-txt"><strong>Xícara de café sendo servida.</strong> Vapor saindo.</div></div>
+        <div class="leg-box"><div class="leg-label">Legenda</div><div class="leg-txt">"Pão do índio, favo de mel e bolo de butiá. Não é buffet de hotel."</div></div>
+      </div>
+    </div>
+
+    <!-- V4 -->
+    <div class="video-card">
+      <div class="video-thumb vt4"><div class="vt-num">04</div><div class="vt-play">▶</div><span class="vt-tag vtag-hist">Histórico</span></div>
+      <div class="video-body">
+        <div class="video-titulo">O Patrimônio de manhã cedo — antes de todo mundo</div>
+        <div class="video-formato">Reel · 20 a 30s</div>
+        <div class="cena"><div class="cena-n">1</div><div class="cena-txt"><strong>Porta da pousada abrindo.</strong> Frio de manhã visível.</div></div>
+        <div class="cena"><div class="cena-n">2</div><div class="cena-txt"><strong>Caminhada até o Patrimônio.</strong> Câmera acompanhando a pé.</div></div>
+        <div class="cena"><div class="cena-n v">3</div><div class="cena-txt"><strong>Entrada no sítio arqueológico vazio.</strong> Sol baixo, névoa leve.</div></div>
+        <div class="cena"><div class="cena-n v">4</div><div class="cena-txt"><strong>Cenas do Patrimônio sem ninguém.</strong> Silêncio total.</div></div>
+        <div class="leg-box"><div class="leg-label">Legenda</div><div class="leg-txt">"De manhã o Patrimônio é seu. Só quem dorme aqui ao lado consegue isso."</div></div>
+      </div>
+    </div>
+
+    <!-- V5 -->
+    <div class="video-card">
+      <div class="video-thumb vt5"><div class="vt-num">05</div><div class="vt-play">▶</div><span class="vt-tag vtag-exp">Experiência</span></div>
+      <div class="video-body">
+        <div class="video-titulo">Lareira acesa — inverno nas Missões</div>
+        <div class="video-formato">Reel · 15 a 20s</div>
+        <div class="cena"><div class="cena-n">1</div><div class="cena-txt"><strong>Fogo acendendo na lareira.</strong> Close nas brasas.</div></div>
+        <div class="cena"><div class="cena-n">2</div><div class="cena-txt"><strong>Alguém aquecendo as mãos.</strong> Clima de aconchego.</div></div>
+        <div class="cena"><div class="cena-n v">3</div><div class="cena-txt"><strong>Vista da janela com frio lá fora.</strong> Contraste do calor interno.</div></div>
+        <div class="leg-box"><div class="leg-label">Legenda</div><div class="leg-txt">"Inverno nas Missões tem esse gostinho. Lareira acesa, frio lá fora, história em tudo."</div></div>
+      </div>
+    </div>
+
+    <!-- V6 -->
+    <div class="video-card">
+      <div class="video-thumb vt6"><div class="vt-num">06</div><div class="vt-play">▶</div><span class="vt-tag vtag-fe">Fé</span></div>
+      <div class="video-body">
+        <div class="video-titulo">A energia das Missões — vídeo de autoridade</div>
+        <div class="video-formato">Reel · 30 a 45s</div>
+        <div class="cena"><div class="cena-n">1</div><div class="cena-txt"><strong>Imagens do Patrimônio em silêncio.</strong> Sem narração inicial.</div></div>
+        <div class="cena"><div class="cena-n">2</div><div class="cena-txt"><strong>Texto na tela:</strong> "Milhares de visitantes descrevem a mesma coisa."</div></div>
+        <div class="cena"><div class="cena-n v">3</div><div class="cena-txt"><strong>Texto:</strong> "Um arrepio que não conseguem explicar."</div></div>
+        <div class="cena"><div class="cena-n v">4</div><div class="cena-txt"><strong>Close nas pedras e na Cruz Missioneira.</strong></div></div>
+        <div class="cena"><div class="cena-n m">5</div><div class="cena-txt"><strong>Texto final:</strong> "Vem sentir. Pousada das Missões."</div></div>
+        <div class="leg-box"><div class="leg-label">Legenda</div><div class="leg-txt">"Não dá pra explicar. Dá pra sentir. São Miguel das Missões."</div></div>
+      </div>
+    </div>
+
+    <!-- V7 -->
+    <div class="video-card">
+      <div class="video-thumb vt7"><div class="vt-num">07</div><div class="vt-play">▶</div><span class="vt-tag vtag-exp">Experiência</span></div>
+      <div class="video-body">
+        <div class="video-titulo">O café da manhã — câmera percorrendo a mesa</div>
+        <div class="video-formato">Reel · 20 a 30s</div>
+        <div class="cena"><div class="cena-n">1</div><div class="cena-txt"><strong>Mesa sendo montada.</strong> Câmera de cima, mãos colocando os itens.</div></div>
+        <div class="cena"><div class="cena-n">2</div><div class="cena-txt"><strong>Close no pão do índio.</strong> Sendo servido ou partido ao meio.</div></div>
+        <div class="cena"><div class="cena-n v">3</div><div class="cena-txt"><strong>Favo de mel.</strong> Mel escorrendo — imagem muito apetitosa.</div></div>
+        <div class="cena"><div class="cena-n v">4</div><div class="cena-txt"><strong>Bolo de butiá cortado.</strong> Mostrando a textura por dentro.</div></div>
+        <div class="cena"><div class="cena-n m">5</div><div class="cena-txt"><strong>Xícara de café sendo servida.</strong> Vapor saindo se possível.</div></div>
+        <div class="leg-box"><div class="leg-label">Legenda</div><div class="leg-txt">"Pão do índio, favo de mel e bolo de butiá. Não é buffet de hotel. É o café que alguém fez pra você."</div></div>
+      </div>
+    </div>
+
+    <!-- V8 -->
+    <div class="video-card">
+      <div class="video-thumb vt8"><div class="vt-num">08</div><div class="vt-play">▶</div><span class="vt-tag vtag-estrutura">Estrutura</span></div>
+      <div class="video-body">
+        <div class="video-titulo">Corredor e jardim da pousada — o ambiente por dentro</div>
+        <div class="video-formato">Reel · 20 a 30s</div>
+        <div class="cena"><div class="cena-n">1</div><div class="cena-txt"><strong>Entrada do corredor coberto.</strong> Câmera na altura dos olhos, andando devagar.</div></div>
+        <div class="cena"><div class="cena-n">2</div><div class="cena-txt"><strong>Detalhe do tijolo aparente.</strong> Close nas colunas e no telhado.</div></div>
+        <div class="cena"><div class="cena-n v">3</div><div class="cena-txt"><strong>Jardim ao lado do corredor.</strong> Verde, palmeiras, área aberta.</div></div>
+        <div class="cena"><div class="cena-n v">4</div><div class="cena-txt"><strong>Vista do corredor pro céu.</strong> Câmera inclinada pra cima mostrando a estrutura.</div></div>
+        <div class="cena"><div class="cena-n m">5</div><div class="cena-txt"><strong>Final com Patrimônio visível ao fundo.</strong> Fecha mostrando que está ao lado.</div></div>
+        <div class="leg-box"><div class="leg-label">Legenda</div><div class="leg-txt">"Tijolo aparente, jardim e o Patrimônio Mundial ao fundo. É assim por aqui."</div></div>
+      </div>
+    </div>
+
+    <!-- V9 -->
+    <div class="video-card">
+      <div class="video-thumb vt9"><div class="vt-num">09</div><div class="vt-play">▶</div><span class="vt-tag vtag-exp">Experiência</span></div>
+      <div class="video-body">
+        <div class="video-titulo">O quarto por dentro — suíte especial</div>
+        <div class="video-formato">Reel · 20 a 30s</div>
+        <div class="cena"><div class="cena-n">1</div><div class="cena-txt"><strong>Porta abrindo devagar.</strong> Luz natural entrando.</div></div>
+        <div class="cena"><div class="cena-n">2</div><div class="cena-txt"><strong>Cama arrumada em detalhe.</strong> Movimento suave de cima pra baixo.</div></div>
+        <div class="cena"><div class="cena-n v">3</div><div class="cena-txt"><strong>Quadros e decoração missioneira.</strong> Paredes com tons quentes.</div></div>
+        <div class="cena"><div class="cena-n v">4</div><div class="cena-txt"><strong>Janela com luz natural.</strong> Verde do jardim ao fundo.</div></div>
+        <div class="leg-box"><div class="leg-label">Legenda</div><div class="leg-txt">"Suíte com identidade missioneira. Para quem quer um pouco mais."</div></div>
+      </div>
+    </div>
+
+    <!-- V10 -->
+    <div class="video-card">
+      <div class="video-thumb vt10"><div class="vt-num">10</div><div class="vt-play">▶</div><span class="vt-tag vtag-estrutura">Estrutura</span></div>
+      <div class="video-body">
+        <div class="video-titulo">Drone sobre as Missões — chegada épica</div>
+        <div class="video-formato">Reel + YouTube · 30 a 45s</div>
+        <div class="cena"><div class="cena-n">1</div><div class="cena-txt"><strong>Drone abrindo sobre São Miguel.</strong> Texto: "São Miguel das Missões, RS."</div></div>
+        <div class="cena"><div class="cena-n">2</div><div class="cena-txt"><strong>Aproximando no Patrimônio.</strong> Texto: "Único Patrimônio Mundial do sul."</div></div>
+        <div class="cena"><div class="cena-n v">3</div><div class="cena-txt"><strong>Descendo até a pousada.</strong> Texto: "A Pousada das Missões fica ao lado."</div></div>
+        <div class="cena"><div class="cena-n v">4</div><div class="cena-txt"><strong>Fachada da pousada.</strong> Texto: "Reserve pelo WhatsApp."</div></div>
+        <div class="leg-box"><div class="leg-label">Legenda</div><div class="leg-txt">"Do Patrimônio Mundial até a sua cama. Tudo ao lado. Tudo a pé."</div></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+</div>
+
+<div class="footer">
+  <div class="footer-txt">Pousada das Missões · <span>@pousadadasmissoes</span> · pousadadasmissoes.com.br · (55) 98161-5722</div>
+</div>
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
+</body>
+</html>
